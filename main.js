@@ -8,6 +8,22 @@ $(document).ready(function(){
         nextImage();
     });
 
+    $('.nav i').click(function(){
+        //trovo la posizione del pallino cliccato
+        var posizione = $(this).index();
+        //rimuovere la classe
+        $('.images img').removeClass('active');
+        //aggiungere la classe active all'elemento trovato con
+        //l'indice trovato attraverso il metodo eq()
+        $('.images img').eq(posizione).addClass('active');
+
+        //rimuovere la classe a tutti i pallini
+        $('.nav i').removeClass('active');
+        //dare la classe al pallino giusto
+        $('.nav i').eq(posizione).addClass('active');
+    });
+
+
     //******FUNZIONI******//
 
     //funzione next//
